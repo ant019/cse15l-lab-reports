@@ -1,6 +1,8 @@
+
 # Lab Report 6
 
 ## Auto Grader Code
+
 ```
 CPATH=.:lib/hamcrest-core-1.3.jar:lib/junit-4.13.2.jar
 set -e
@@ -38,3 +40,22 @@ else
         echo "ERROR: ListExamples.java does not exist." >/dev/stderr
         exit
 fi```
+
+## Grader Examples
+
+### Example 1
+
+Tested using https://github.com/ucsd-cse15l-f22/list-methods-corrected
+![image](https://user-images.githubusercontent.com/114563712/204357612-593e9cb7-2409-49e0-aaab-08baf575e440.png)
+
+### Example 2
+
+Tested using https://github.com/ucsd-cse15l-f22/list-methods-lab3
+![image](https://user-images.githubusercontent.com/114563712/204357710-58a99e50-082f-47a6-94eb-508b9e2f7e1b.png)
+
+### Example 3
+
+Tested using https://github.com/ucsd-cse15l-f22/list-methods-signature
+![image](https://user-images.githubusercontent.com/114563712/204357789-866a655e-1b23-45d8-84fb-ccd4badf366c.png)
+
+## Tracing
