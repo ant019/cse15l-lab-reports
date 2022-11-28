@@ -70,3 +70,13 @@ exists inside the student-submission directory, and here it returns true, the ex
 `"FOUND: student-submission/ListExamples.java"` which has an exit code of 0. Next, we copy ListExamples.java to the current directory,
 which has an exit code of 0. On line 8, we run the command `set +e` which will cause the script to ignore any non-zero exit code, 
 the exit code for this is 0. The purpose of this is to grade files that may have errors in it. Next, we echo the line `"Compiling"`, this has an exit code of 0.
+After, we compile the program and the tests, and send any stderr output to the compile.log file using javac `-cp $CPATH *.java 2> compile.log`, 
+this has an exit code of 0. Next, we run `if [[ $? != 0 ]]; then`, which checks if the compile succeeded using the exit code of the last command. Since the
+javac command did not have an exit code of 0, the next four lines are not run. On lines 17 & 18, echo commands are displayed to show the status of compilation,
+the exit code of this is 0. Next, we run the line `java -cp $CPATH org.junit.runner.JUnitCore TestListExamples > run.log`, which runs the JUnit tests on
+the new program, this exit code for this is 1. After, we check the exit code of the previous command again, since it is not 0, the if statement continues.
+On line 21, we echo `"Run Tests failed."`, which has an exit code of 0. Next, we print the run.log file to stderr, which has an exit code of 0. The line after
+this is another echo command, which has an exit code of 0. On lines 24 and 25, we the commands `grep`, `awk`, and `cut` on the run.log file to get the number
+of tests failed, which has an output of 1, and then the total number of tests run, which has an output of 3. The rest of the code do not run due to the if
+statement.
+
