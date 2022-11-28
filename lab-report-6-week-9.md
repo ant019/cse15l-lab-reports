@@ -60,3 +60,13 @@ Tested using https://github.com/ucsd-cse15l-f22/list-methods-signature
 ![image](https://user-images.githubusercontent.com/114563712/204357789-866a655e-1b23-45d8-84fb-ccd4badf366c.png)
 
 ## Tracing
+
+I will trace what my code did in example 1.
+Line 1 of my code sets a variable for the classpath for JUnit `CPATH=.:lib/hamcrest-core-1.3.jar:lib/junit-4.13.2.jar` and the exit code for this is 0.
+Line 2 of the code is `set -e` which forces the script to exit if there is a non-zero exit code, and the exit code for this is 0. Next, we use 
+`rm -rf student-submission`, which recursively removes all the files of inside the directory, the exit code for this is always 0. After, we use 
+`git clone $1 student-submission` to clone the file into the directory student-submission,the exit code for this is 0. Next, we check if the ListExamples.java
+exists inside the student-submission directory, and here it returns true, the exit code is 0. After this, we have an echo statement
+`"FOUND: student-submission/ListExamples.java"` which has an exit code of 0. Next, we copy ListExamples.java to the current directory,
+which has an exit code of 0. On line 8, we run the command `set +e` which will cause the script to ignore any non-zero exit code, 
+the exit code for this is 0. The purpose of this is to grade files that may have errors in it. Next, we echo the line `"Compiling"`, this has an exit code of 0.
