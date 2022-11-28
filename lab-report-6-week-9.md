@@ -39,7 +39,8 @@ if [[ -f student-submission/"ListExamples.java" ]]; then
 else
         echo "ERROR: ListExamples.java does not exist." >/dev/stderr
         exit
-fi```
+fi
+```
 
 ## Grader Examples
 
